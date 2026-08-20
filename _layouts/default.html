@@ -6,58 +6,547 @@
 
   <title>{{ page.title }} | Rayssa Oliveira</title>
 
+  <meta name="description" content="{{ site.description }}">
+
   <style>
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
     body {
-      margin: 0;
-      font-family: Arial, sans-serif;
-      background: #ffffff;
-      color: #1f2937;
-    }
-
-    header {
-      padding: 30px 8%;
-      border-bottom: 1px solid #e5e7eb;
-    }
-
-    header h1 {
-      margin: 0;
-      font-size: 28px;
-    }
-
-    main {
-      max-width: 900px;
-      margin: 50px auto;
-      padding: 0 25px;
+      font-family: Arial, Helvetica, sans-serif;
+      background: #f8fafb;
+      color: #102a3a;
+      line-height: 1.6;
     }
 
     a {
-      color: #2563eb;
+      color: inherit;
       text-decoration: none;
     }
 
-    a:hover {
-      text-decoration: underline;
+    /* =========================
+       HEADER
+    ========================= */
+
+    .header {
+      background: #032b3b;
+      color: white;
+      padding: 22px 5%;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 30px;
     }
 
-    h1, h2, h3 {
-      color: #111827;
+    .brand {
+      display: flex;
+      flex-direction: column;
     }
 
-    article {
-      line-height: 1.8;
+    .brand-name {
+      font-size: 27px;
+      font-weight: 700;
+      letter-spacing: 1px;
     }
+
+    .brand-subtitle {
+      margin-top: 2px;
+      font-size: 13px;
+      letter-spacing: 3px;
+      color: #58c5d6;
+      text-transform: uppercase;
+    }
+
+    .navigation {
+      display: flex;
+      align-items: center;
+      gap: 38px;
+    }
+
+    .navigation a {
+      font-size: 15px;
+      font-weight: 600;
+      letter-spacing: .5px;
+      transition: .2s;
+    }
+
+    .navigation a:hover {
+      color: #58c5d6;
+    }
+
+    .navigation .active {
+      color: #58c5d6;
+      border-bottom: 2px solid #58c5d6;
+      padding-bottom: 8px;
+    }
+
+    .social {
+      display: flex;
+      gap: 18px;
+      margin-left: 10px;
+    }
+
+    .social a {
+      font-size: 14px;
+      border: 1px solid rgba(255,255,255,.3);
+      width: 34px;
+      height: 34px;
+      border-radius: 50%;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+
+    /* =========================
+       HERO
+    ========================= */
+
+    .hero {
+      min-height: 440px;
+      background: linear-gradient(
+        90deg,
+        #f4f7f8 0%,
+        #f4f7f8 48%,
+        #e8edef 100%
+      );
+
+      display: flex;
+      align-items: center;
+      padding: 60px 8%;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .hero-content {
+      width: 55%;
+      max-width: 650px;
+      z-index: 2;
+    }
+
+    .hero-label {
+      color: #279eb2;
+      font-size: 14px;
+      font-weight: 700;
+      letter-spacing: 2px;
+      margin-bottom: 15px;
+    }
+
+    .hero h1 {
+      font-family: Georgia, "Times New Roman", serif;
+      font-size: clamp(48px, 5vw, 76px);
+      line-height: 1.02;
+      font-weight: 500;
+      color: #082b3c;
+      margin-bottom: 25px;
+    }
+
+    .hero h1 span {
+      color: #39aabd;
+    }
+
+    .hero-text {
+      font-size: 18px;
+      line-height: 1.7;
+      color: #4c5962;
+      max-width: 600px;
+      margin-bottom: 28px;
+    }
+
+    .hero-button {
+      display: inline-flex;
+      align-items: center;
+      gap: 12px;
+      background: #07506a;
+      color: white;
+      padding: 14px 23px;
+      border-radius: 8px;
+      font-weight: 700;
+      transition: .2s;
+    }
+
+    .hero-button:hover {
+      background: #063d50;
+      transform: translateY(-2px);
+    }
+
+    .hero-image {
+      position: absolute;
+      right: 0;
+      top: 0;
+      width: 48%;
+      height: 100%;
+      background:
+        linear-gradient(
+          90deg,
+          rgba(244,247,248,1) 0%,
+          rgba(244,247,248,0) 25%
+        ),
+        url('/assets/images/hero-blog.jpg') center/cover no-repeat;
+    }
+
+    /* =========================
+       ARTICLES
+    ========================= */
+
+    .articles-section {
+      background: white;
+      padding: 70px 7%;
+    }
+
+    .section-header {
+      text-align: center;
+      margin-bottom: 35px;
+    }
+
+    .section-line {
+      width: 75px;
+      height: 3px;
+      background: #35aabd;
+      margin: 0 auto 15px;
+    }
+
+    .section-header h2 {
+      font-family: Georgia, "Times New Roman", serif;
+      font-size: 34px;
+      color: #082b3c;
+      margin-bottom: 5px;
+    }
+
+    .section-header p {
+      color: #59636b;
+      font-size: 17px;
+    }
+
+    /* =========================
+       POST CARD
+    ========================= */
+
+    .post-card {
+      max-width: 1200px;
+      margin: 0 auto;
+      background: white;
+      border: 1px solid #e6ebee;
+      border-radius: 12px;
+      overflow: hidden;
+
+      display: grid;
+      grid-template-columns: 36% 64%;
+
+      box-shadow: 0 8px 30px rgba(0,0,0,.07);
+
+      transition: .25s;
+    }
+
+    .post-card:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 15px 35px rgba(0,0,0,.1);
+    }
+
+    .post-image {
+      min-height: 280px;
+      background:
+        linear-gradient(
+          rgba(3,43,59,.15),
+          rgba(3,43,59,.15)
+        ),
+        url('/assets/images/article-languages.jpg') center/cover no-repeat;
+    }
+
+    .post-content {
+      padding: 38px 42px;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+    }
+
+    .tags {
+      display: flex;
+      gap: 10px;
+      margin-bottom: 13px;
+      flex-wrap: wrap;
+    }
+
+    .tag {
+      background: #e6f3f6;
+      color: #17566b;
+      padding: 5px 12px;
+      border-radius: 20px;
+      font-size: 11px;
+      font-weight: 700;
+      letter-spacing: .4px;
+    }
+
+    .post-content h3 {
+      font-family: Georgia, "Times New Roman", serif;
+      font-size: 31px;
+      line-height: 1.2;
+      color: #082b3c;
+      margin-bottom: 14px;
+    }
+
+    .post-description {
+      color: #59636b;
+      font-size: 16px;
+      line-height: 1.6;
+      margin-bottom: 22px;
+    }
+
+    .post-footer {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 20px;
+    }
+
+    .post-date {
+      color: #66727a;
+      font-size: 13px;
+    }
+
+    .read-more {
+      color: #07506a;
+      font-size: 14px;
+      font-weight: 700;
+      white-space: nowrap;
+    }
+
+    .read-more:hover {
+      color: #249db1;
+    }
+
+    /* =========================
+       ARTICLE PAGE
+    ========================= */
+
+    .article-page {
+      max-width: 900px;
+      margin: 70px auto;
+      padding: 0 25px;
+    }
+
+    .article-page h1 {
+      font-family: Georgia, "Times New Roman", serif;
+      font-size: clamp(38px, 5vw, 60px);
+      line-height: 1.1;
+      color: #082b3c;
+      margin-bottom: 20px;
+    }
+
+    .article-page h2 {
+      font-family: Georgia, "Times New Roman", serif;
+      color: #082b3c;
+      font-size: 32px;
+      margin-top: 45px;
+      margin-bottom: 15px;
+    }
+
+    .article-page h3 {
+      color: #07506a;
+      font-size: 23px;
+      margin-top: 35px;
+      margin-bottom: 12px;
+    }
+
+    .article-page p {
+      font-size: 17px;
+      line-height: 1.85;
+      color: #394750;
+      margin-bottom: 20px;
+    }
+
+    .article-page table {
+      width: 100%;
+      border-collapse: collapse;
+      margin: 30px 0;
+    }
+
+    .article-page th,
+    .article-page td {
+      padding: 12px;
+      border: 1px solid #dfe6e9;
+      text-align: left;
+    }
+
+    .article-page th {
+      background: #eaf4f6;
+      color: #08384b;
+    }
+
+    .article-page blockquote {
+      border-left: 4px solid #35aabd;
+      padding-left: 20px;
+      margin: 30px 0;
+      color: #53616a;
+      font-style: italic;
+    }
+
+    /* =========================
+       FOOTER
+    ========================= */
+
+    footer {
+      background: #032b3b;
+      color: white;
+      padding: 28px 5%;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 20px;
+      flex-wrap: wrap;
+    }
+
+    footer p {
+      color: #c8d4d9;
+      font-size: 14px;
+    }
+
+    .footer-phrase {
+      font-family: Georgia, "Times New Roman", serif;
+      font-style: italic;
+      color: #dce8eb;
+    }
+
+    /* =========================
+       MOBILE
+    ========================= */
+
+    @media (max-width: 850px) {
+
+      .header {
+        flex-direction: column;
+        align-items: flex-start;
+      }
+
+      .navigation {
+        width: 100%;
+        gap: 20px;
+        flex-wrap: wrap;
+      }
+
+      .social {
+        display: none;
+      }
+
+      .hero {
+        padding: 55px 7%;
+        min-height: 500px;
+      }
+
+      .hero-content {
+        width: 100%;
+      }
+
+      .hero-image {
+        opacity: .18;
+        width: 100%;
+      }
+
+      .post-card {
+        grid-template-columns: 1fr;
+      }
+
+      .post-image {
+        min-height: 230px;
+      }
+
+      .post-content {
+        padding: 28px;
+      }
+
+      .post-content h3 {
+        font-size: 27px;
+      }
+
+      .post-footer {
+        flex-direction: column;
+        align-items: flex-start;
+      }
+
+      footer {
+        flex-direction: column;
+        text-align: center;
+      }
+    }
+
   </style>
 </head>
 
 <body>
 
-  <header>
-    <h1>Rayssa Oliveira</h1>
-  </header>
+<header class="header">
 
-  <main>
+  <a href="{{ '/' | relative_url }}" class="brand">
+    <span class="brand-name">RAYSSA OLIVEIRA</span>
+    <span class="brand-subtitle">TECHNOLOGY • DATA • BUSINESS</span>
+  </a>
+
+  <nav class="navigation">
+
+    <a href="{{ '/' | relative_url }}" class="active">
+      ARTIGOS
+    </a>
+
+    <a href="{{ '/' | relative_url }}#sobre">
+      SOBRE
+    </a>
+
+    <a href="mailto:seuemail@email.com">
+      CONTATO
+    </a>
+
+    <div class="social">
+
+      <a href="https://github.com/RayssaOliveiraRMO"
+         target="_blank"
+         aria-label="GitHub">
+        GH
+      </a>
+
+      <a href="https://www.linkedin.com/in/rayssaoliveira-rmo/"
+         target="_blank"
+         aria-label="LinkedIn">
+        IN
+      </a>
+
+    </div>
+
+  </nav>
+
+</header>
+
+
+{% if page.layout == "post" %}
+
+  <main class="article-page">
     {{ content }}
   </main>
+
+{% else %}
+
+  {{ content }}
+
+{% endif %}
+
+
+<footer>
+
+  <p>
+    © 2026 Rayssa Oliveira. Todos os direitos reservados.
+  </p>
+
+  <p class="footer-phrase">
+    “Dados informam. Análise transforma. Tecnologia conecta.”
+  </p>
+
+  <p>
+    Technology • Data • Business
+  </p>
+
+</footer>
 
 </body>
 </html>
