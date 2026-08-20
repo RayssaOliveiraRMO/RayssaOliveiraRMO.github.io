@@ -1,0 +1,28 @@
+---
+layout: default
+---
+
+<main class="article-page">
+
+  <div class="article-header">
+
+    <div class="article-tags">
+      <span class="tag">PESQUISA</span>
+      <span class="tag">MERCADO DE TECNOLOGIA</span>
+    </div>
+
+    <h1>{{ page.title }}</h1>
+
+    <div class="article-meta">
+      {{ page.date | date: "%d" }} AGO {{ page.date | date: "%Y" }}
+      <span>•</span>
+      Rayssa Oliveira
+    </div>
+
+  </div>
+
+  <div class="article-content">
+    {{ content }}
+  </div>
+
+</main>
