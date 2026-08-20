@@ -136,7 +136,7 @@ permalink: /sobre/
     <div class="about-highlight">
 
       <p>
-        <strong>Sou Rayssa Oliveira, profissional de tecnologia com interesse em dados, programação, processos e soluções digitais.</strong>
+        <strong>Sou Rayssa Oliveira, profissional  com interesse em dados, programação, processos e soluções digitais.</strong>
       </p>
 
     </div>
