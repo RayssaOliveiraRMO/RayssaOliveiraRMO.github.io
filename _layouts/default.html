@@ -401,6 +401,28 @@
   color: #394750;
 }
 
+.article-content {
+  counter-reset: article-topic;
+}
+
+.article-content ol {
+  list-style: none;
+  padding-left: 0;
+  margin-left: 0;
+}
+
+.article-content ol > li {
+  counter-increment: article-topic;
+  margin-bottom: 0;
+}
+
+.article-content ol > li::before {
+  content: counter(article-topic) ". ";
+  font-weight: 700;
+  color: #07506a;
+
+}
+
 .article-content li {
   margin-bottom: 10px;
   line-height: 1.7;
