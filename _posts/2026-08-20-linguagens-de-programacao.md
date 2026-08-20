@@ -276,101 +276,21 @@ ou uma combinação desses fatores.
 
 Comparação das linguagens
 
-Linguagem
+## Comparação das linguagens
 
-Principal área de atuação
-
-Alcance no mercado
-
-Principal característica
-
-Python
-
-IA, dados, automação e back-end
-
-Muito amplo
-
-Forte crescimento e grande diversidade de aplicações
-
-JavaScript
-
-Desenvolvimento web
-
-Muito amplo
-
-Forte presença no front-end e grande ecossistema
-
-TypeScript
-
-Front-end e full-stack
-
-Em expansão
-
-Crescimento acelerado e tipagem estática
-
-Java
-
-Sistemas corporativos e back-end
-
-Muito amplo
-
-Estabilidade e presença empresarial
-
-C++
-
-Alta performance e jogos
-
-Especializado
-
-Desempenho e controle de recursos
-
-PHP
-
-Web, WordPress e e-commerce
-
-Muito amplo na web
-
-Grande quantidade de sistemas existentes
-
-Swift
-
-Aplicações Apple
-
-Especializado
-
-Ecossistema iOS/macOS
-
-R
-
-Estatística e pesquisa
-
-Especializado
-
-Forte capacidade de análise estatística
-
-SQL
-
-Dados e bancos de dados
-
-Transversal
-
-Presença em diversas áreas de tecnologia
-
-Go
-
-Cloud, infraestrutura e back-end
-
-Especializado/em expansão
-
-Simplicidade, desempenho e sistemas distribuídos
-
-C#
-
-.NET, corporativo e jogos
-
-Amplo
-
-Forte ecossistema empresarial e Unity
+| Linguagem | Principal área de atuação | Alcance no mercado | Principal característica |
+|---|---|---|---|
+| Python | IA, dados, automação e back-end | Muito amplo | Forte crescimento e grande diversidade de aplicações |
+| JavaScript | Desenvolvimento web | Muito amplo | Forte presença no front-end e grande ecossistema |
+| TypeScript | Front-end e full-stack | Em expansão | Crescimento acelerado e tipagem estática |
+| Java | Sistemas corporativos e back-end | Muito amplo | Estabilidade e presença empresarial |
+| C++ | Alta performance e jogos | Especializado | Desempenho e controle de recursos |
+| PHP | Web, WordPress e e-commerce | Muito amplo na web | Grande quantidade de sistemas existentes |
+| Swift | Aplicações Apple | Especializado | Ecossistema iOS/macOS |
+| R | Estatística e pesquisa | Especializado | Forte capacidade de análise estatística |
+| SQL | Dados e bancos de dados | Transversal | Presença em diversas áreas de tecnologia |
+| Go | Cloud, infraestrutura e back-end | Especializado/em expansão | Simplicidade, desempenho e sistemas distribuídos |
+| C# | .NET, corporativo e jogos | Amplo | Forte ecossistema empresarial e Unity |
 
 Conclusão
 
