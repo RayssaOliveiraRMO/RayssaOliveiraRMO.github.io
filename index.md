@@ -22,7 +22,7 @@ title: Meu Blog
       informação em conhecimento aplicado.
     </p>
 
-    <a href="#artigos" class="hero-button">
+    <a href="{{ '/' | relative_url }}#artigos" class="hero-button">
       VER ARTIGOS →
     </a>
 
