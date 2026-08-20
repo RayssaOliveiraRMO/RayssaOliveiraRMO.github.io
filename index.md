@@ -9,4 +9,14 @@ Bem-vinda ao meu espaço de artigos sobre tecnologia, dados e programação.
 
 ## Artigos
 
-Em breve, você poderá encontrar aqui minhas pesquisas e artigos sobre tecnologia, desenvolvimento e mercado de trabalho.
+{% for post in site.posts %}
+### [{{ post.title }}]({{ post.url | relative_url }})
+
+{{ post.date | date: "%d/%m/%Y" }}
+
+{{ post.excerpt | strip_html | truncatewords: 35 }}
+
+[Leia a matéria →]({{ post.url | relative_url }})
+
+---
+{% endfor %}
